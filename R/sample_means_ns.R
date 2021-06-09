@@ -1,11 +1,10 @@
 #' 
 #'
-#' @param vec A numeric vector
-#' @param reps An integer
-#' @param n A integer vector for sample size
+#' @param df a dataset
+
 #' 
 #'
-#' @return A dataset with means and sample size
+#' @return A vector to be added as column to df
 #'
 #' @import stringr
 #' @import dplyr
@@ -16,13 +15,9 @@
 #' @import tidyverse
 #' @export
 
-sample_means_ns <- function(vec, reps, ns){
-  means <- map(ns, ~many_sample_means(vec, .x, reps))
-  sample_mean = unlist(means)
-  n = rep(ns, each = reps)
-  df <- data.frame(sample_mean, n)
-  names(df) <- c("sample_mean", "n")
-  return(df)
+GameScore <- function(df){
+   GameScore = df$PTS + 0.4 * df$FG - 0.7 * df$FGA - 0.4*(df$FTA - df$FT) + 0.7 * df$ORB + 0.3 * df$DRB + df$STL + 0.7 * df$AST + 0.7 * df$BLK - 0.4 * df$PF - df$TOV
+   return(GameScore)
 }
 
 
