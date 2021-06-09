@@ -1,10 +1,9 @@
-#' Puts the various parts of speech together into a full phrase.
+#' calculates true shooting percentages
 #'
-#' @param vec A vector
-#' @param n An integer
+#' @param dataset A dataset
 #' 
 #'
-#' @return A number representing mean
+#' @return A vector that will be added as a column
 #'
 #' @import stringr
 #' @import glue
