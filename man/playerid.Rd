@@ -9,6 +9,9 @@ many_sample_means(dataset)
 \arguments{
 \item{dataset}{A datset}
 }
+\value{
+a vector.
+}
 \description{
 removes id char from player
 }
