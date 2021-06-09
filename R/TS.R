@@ -14,8 +14,9 @@
 #' @export
 
 
-sample_mean <- function(vec, n){
-  values <- sample(vec, n, replace = TRUE)
-  mean(values)
+TS <- function(dataset){
+  TSA = dataset$FGA + 0.44 * dataset$FTA
+  TS =  dataset$PTS / (2 * TSA)
+  return(TS)
 }
 
